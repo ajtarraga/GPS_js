@@ -1,0 +1,24 @@
+{
+    "name": "sistemacau",
+    "version": "1.0.0",
+    "description": "Prototipo sistema CAU",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "./node_modules/.bin/jasmine-node servidor"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com:ajtarraga/GPS_js.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com:ajtarraga/GPS_js/issues"
+    },
+    "homepage": "https://github.com:ajtarraga/GPS_js#readme",
+    "dependencies": {
+        "express": "^4.18.2",
+        "jasmine-node": "3.0.0"
+    }
+}
