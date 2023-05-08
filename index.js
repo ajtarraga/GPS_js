@@ -15,6 +15,35 @@ app.get("/", function (request, response) {
     response.send(contenido);
 });
 
+app.get("/agregarUsuario/:nick", function (request, response) {
+    let nick = request.params.nick;
+    let res = sistema.agregarUsuario(nick, "normal");
+    response.send(res);
+});
+
+app.get("/agregarTecnico/:nick", function (request, response) {
+    let nick = request.params.nick;
+    let res = sistema.agregarUsuario(nick, "tecnico");
+    response.send(res);
+});
+
+app.get("/obtenerUsuarios", function (request, response) {
+    let lista = sistema.obtenerUsuarios();
+    response.send(lista);
+});
+
+app.get("/obtenerTecnicos", function (request, response) {
+    let lista = sistema.obtenerTecnicos();
+    response.send(lista);
+});
+
+app.get("/crearIncidencia/:nick/:servicio", function (request, response) {
+    let nick = request.params.nick;
+    let servicio = request.params.servicio;
+    let codigo = sistema.crearIncidencia(nick, servicio);
+    response.send({ "codigo": codigo });
+});
+
 app.listen(PORT, () => {
     console.log(`App está escuchando en el puerto ${PORT}`);
     console.log('Ctrl+C para salir');
